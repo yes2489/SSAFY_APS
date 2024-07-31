@@ -1,4 +1,4 @@
-package 배열2차원;
+package SWEA_1213_String;
 
 public class Solution {
 
