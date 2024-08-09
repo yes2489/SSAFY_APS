@@ -1,5 +1,6 @@
 package SWEA_1859_백만장자;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
@@ -15,25 +16,23 @@ public class Solution {
 		
 		for (int t = 1; t <= T; t++) {
 			int N = sc.nextInt();
-			int[] arr = new int[N];
+			
+			int[] price = new int[N];
+			
 			for (int i = 0; i < N; i++) {
-				arr[i] = sc.nextInt();
+				price[i] = sc.nextInt();
 			}
 			
-			int max = 0;
-			int sum = 0;
-			int sell = 0;
-			int cnt = 0;
+			long answer = 0; // 문제에서 제공된 N의 범위가 int를 넘어감
 			
-			for (int i = 1; i < N; i++) {
-				// if 1. 아무것도 사지 않는게 최대 이익
-				
-				// else 2. 최대 이익 구하기
+			int[] max = new int[N];
+			max[N - 1] = price[N - 1];
+			for (int i = N -2; i >= 0; i--) {
+				max[i] = Math.max(price[i], max[i + 1]);
+				answer += max[i] - price[i];
 			}
-		
-			max = sell - sum;
-			System.out.println("#" + t + " " + max);
 			
+			System.out.println("#" + t + " " + answer);
 		}
 		
 	}

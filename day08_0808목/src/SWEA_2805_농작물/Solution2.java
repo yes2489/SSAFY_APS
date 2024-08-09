@@ -1,25 +1,17 @@
 package SWEA_2805_농작물;
-// 주말동안 다시 풀어보기 -08/09
+import java.io.FileNotFoundException;
+import java.io.File;
 import java.util.Scanner;
 
-public class Solution {
+//주말동안 다시 풀어보기 -08/09
+public class Solution2 { // 중앙지점과 거리 차이가 N/2 이하인 칸만 더해주기
 	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
+	public static void main(String[] args) throws FileNotFoundException{
+		Scanner sc = new Scanner(new File("input.txt"));
+
 		int T = sc.nextInt(); // 테스트케이스
 		
 		for(int test = 1; test <= T; test++) {
-			/*
-			 * 
-1
-5
-14054
-44250
-02032
-51204
-52212
-			 */
 			
 			int N  = sc.nextInt(); // 한 변의 길이
 			

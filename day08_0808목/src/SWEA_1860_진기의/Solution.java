@@ -1,5 +1,6 @@
 package SWEA_1860_진기의;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
@@ -22,30 +23,28 @@ public class Solution {
 			int N = sc.nextInt(); // 자격을 얻은 사람
 			int M = sc.nextInt(); // 붕어빵 만드는 시간
 			int K = sc.nextInt(); // 만들 수 있는 붕어빵 수
-			for (int i = 0; i < N; i++) { // 사람이 도착하는 시간
-				t = new int[N];
-				t[i]= sc.nextInt();
+			
+			int[] client = new int[N];
+			
+			for(int i = 0; i < N; i++) {
+				client[i] = sc.nextInt();
 			}
 			
-			// 1. 붕어빵을 만드는 시간보다 사람이 빨리 도착하면 Impossible
-			for (int i = 0; i < M; i++) {
-				if(M < t[i]) {
-					System.out.println("#" + tc + " " + "Impossible");
-					break;
+			Arrays.sort(client);
+			
+			String answer = "Possible";
+			
+			for (int i = 0; i < N; i++) {
+				int time = client[i];
+				
+				// time / M : 지금까지 붕어빵 만드는 사이에 사이클 몇 번 돌았는가?
+				// (time / M) * K : 지금까지 만들어진 붕어빵 개수
+				if((time / M) * K  < i + 1) {
+					answer = "Impossible";
 				}
 			}
 			
-			
-			// 2. 시간 내에 만들 수 있는 붕어빵보다 사람이 더 많이 도착하면 Impossible
-//			for(int i = 0; i < M*N; i++) {
-//				if (M >= t[i] && ) {
-//					
-//				}
-//			}
-//			
-			// 나머지 possible
-			
-			
+			System.out.println("#" + tc + " " + answer);
 		}
 		
 		
