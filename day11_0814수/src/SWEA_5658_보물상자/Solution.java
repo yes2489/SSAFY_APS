@@ -36,11 +36,11 @@ public class Solution {
 
 			for (int i = 0; i < N/4; i++) {
            		 // i번째 회전 상태에 맞게 숫자를 큐에 채우기
-                for (int j = 0; j < N; j++) {
-               		 // 현재 회전 상태에서의 인덱스를 계산 (시계방향 회전)
-                    int index = (j + i) % N;
-                    queue.offer(list[index]);
-                 }
+                		for (int j = 0; j < N; j++) {
+               		 	// 현재 회전 상태에서의 인덱스를 계산 (시계방향 회전)
+                    		int index = (j + i) % N;
+                    		queue.offer(list[index]);
+                 		}
 
 				String[] arr = new String[4];
 
