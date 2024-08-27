@@ -1,4 +1,4 @@
-package Stack1;
+package LinkedList;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package Stack1;
+package Queue1;
 
 public class Solution {
 
