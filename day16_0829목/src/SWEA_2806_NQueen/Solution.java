@@ -1,4 +1,4 @@
-package 백트래킹;
+package SWEA_2806_NQueen;
 
 public class Solution {
 
